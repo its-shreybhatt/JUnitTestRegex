@@ -10,4 +10,12 @@ public class JUnitAssertionTest {
         Assertions Assert = null;
         Assert.assertTrue(result);
     }
+
+    @Test
+    void givenLastName_WhenProper_ShouldReturnTrue() {
+        RegexJava object = new RegexJava();
+        boolean result = object.lastName("Bhatt");
+        Assertions Assert = null;
+        Assert.assertTrue(result);
+    }
 }
