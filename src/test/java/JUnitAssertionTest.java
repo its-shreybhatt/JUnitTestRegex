@@ -58,4 +58,12 @@ public class JUnitAssertionTest {
         Assertions Assert = null;
         Assert.assertTrue(result);
     }
+
+    @Test
+    void givenPassword_WhenExactOneCharacter_ShouldReturnTrue() {
+        RegexJava object = new RegexJava();
+        boolean result = object.characterPassword("shReybhAtt@22");
+        Assertions Assert = null;
+        Assert.assertTrue(result);
+    }
 }

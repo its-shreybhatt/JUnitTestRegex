@@ -19,22 +19,27 @@ public class RegexJava {
     }
 
     public boolean mobileNumber(String mobNum) {
-        Pattern patternEmail = Pattern.compile("^[0-9]{2}[\\s][0-9]{10}$");
-        return patternEmail.matcher(mobNum).matches();
+        Pattern patternMobile = Pattern.compile("^[0-9]{2}[\\s][0-9]{10}$");
+        return patternMobile.matcher(mobNum).matches();
     }
 
     public boolean password(String password) {
-        Pattern patternEmail = Pattern.compile("[A-Za-z]{8,}");
-        return patternEmail.matcher(password).matches();
+        Pattern patternPassword = Pattern.compile("[A-Za-z]{8,}");
+        return patternPassword.matcher(password).matches();
     }
 
     public boolean upperCasePassword(String upperCase) {
-        Pattern patternEmail = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z]).+${8,}");
-        return patternEmail.matcher(upperCase).matches();
+        Pattern patternPassword = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z]).+${8,}");
+        return patternPassword.matcher(upperCase).matches();
     }
 
     public boolean numericPassword(String numeric) {
-        Pattern patternEmail = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9]).+${8,}");
-        return patternEmail.matcher(numeric).matches();
+        Pattern patternPassword = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9]).+${8,}");
+        return patternPassword.matcher(numeric).matches();
+    }
+
+    public boolean characterPassword(String character) {
+        Pattern patternPassword = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[-+_!@#$%^&*.,?]).+${8,}");
+        return patternPassword.matcher(character).matches();
     }
 }
