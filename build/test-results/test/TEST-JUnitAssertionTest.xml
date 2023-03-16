@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JUnitAssertionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-16T13:47:18" hostname="DESKTOP-1OOISRL" time="0.034">
-  <properties/>
-  <testcase name="givenSentence_WhenContainsSad_ShouldPassTest()" classname="JUnitAssertionTest" time="0.034"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
