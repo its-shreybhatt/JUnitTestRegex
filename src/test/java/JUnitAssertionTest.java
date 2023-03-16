@@ -26,4 +26,11 @@ public class JUnitAssertionTest {
         Assertions Assert = null;
         Assert.assertTrue(result);
     }
+@Test
+    void givenMobileNum_WhenProper_ShouldReturnTrue() {
+        RegexJava object = new RegexJava();
+        boolean result = object.mobileNumber("91 9557885533");
+        Assertions Assert = null;
+        Assert.assertTrue(result);
+    }
 }
