@@ -29,7 +29,12 @@ public class RegexJava {
     }
 
     public boolean upperCasePassword(String upperCase) {
-        Pattern patternEmail = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z]).+${8,}");
+        Pattern patternEmail = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z]).+${8,}");
         return patternEmail.matcher(upperCase).matches();
+    }
+
+    public boolean numericPassword(String numeric) {
+        Pattern patternEmail = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9]).+${8,}");
+        return patternEmail.matcher(numeric).matches();
     }
 }
