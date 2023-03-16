@@ -94,4 +94,12 @@ public class JUnitAssertionTest {
             Assert.assertFalse(result);
         }
     }
+
+    @Test
+    public void givenSentence_WhenContainsSad_ShouldPassTest() {
+        RegexJava object = new RegexJava();
+        String mood = object.analyseMood("this is a sad message");
+        Assertions Assert = null;
+        Assert.assertEquals("sad", mood);
+    }
 }

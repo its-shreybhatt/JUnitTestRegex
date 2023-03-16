@@ -42,4 +42,9 @@ public class RegexJava {
         Pattern patternPassword = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[-+_!@#$%^&*.,?]).+${8,}");
         return patternPassword.matcher(character).matches();
     }
+    public String analyseMood(String mood) {
+        if (mood.contains("sad"))
+            return "sad";
+        return "happy";
+    }
 }
