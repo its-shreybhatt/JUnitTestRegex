@@ -22,4 +22,9 @@ public class RegexJava {
         Pattern patternEmail = Pattern.compile("^[0-9]{2}[\\s][0-9]{10}$");
         return patternEmail.matcher(mobNum).matches();
     }
+
+    public boolean password(String password) {
+        Pattern patternEmail = Pattern.compile("[A-Za-z]{8,}");
+        return patternEmail.matcher(password).matches();
+    }
 }
