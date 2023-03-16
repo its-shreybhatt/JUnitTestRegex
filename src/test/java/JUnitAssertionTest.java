@@ -42,4 +42,12 @@ public class JUnitAssertionTest {
         Assertions Assert = null;
         Assert.assertTrue(result);
     }
+
+    @Test
+    void givenPassword_WhenMinOneUpperCase_ShouldReturnTrue() {
+        RegexJava object = new RegexJava();
+        boolean result = object.upperCasePassword("shreYBhatt");
+        Assertions Assert = null;
+        Assert.assertTrue(result);
+    }
 }

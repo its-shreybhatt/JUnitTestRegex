@@ -27,4 +27,9 @@ public class RegexJava {
         Pattern patternEmail = Pattern.compile("[A-Za-z]{8,}");
         return patternEmail.matcher(password).matches();
     }
+
+    public boolean upperCasePassword(String upperCase) {
+        Pattern patternEmail = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z]).+${8,}");
+        return patternEmail.matcher(upperCase).matches();
+    }
 }
