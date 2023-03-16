@@ -12,4 +12,9 @@ public class RegexJava {
         Pattern patternTwo = Pattern.compile("[A-z][A-za-z]{2,}");
        return patternTwo.matcher(lastName).matches();
     }
+
+    public boolean emailId(String emailId) {
+        Pattern patternEmail = Pattern.compile("[a-z]+[.]?[a-z]{0,}[@][a-z]+[.][a-z]{2,4}[.]?[a-z]{0,2}");
+        return patternEmail.matcher(emailId).matches();
+    }
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JUnitAssertionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-03-16T08:48:01" hostname="DESKTOP-1OOISRL" time="0.044">
+<testsuite name="JUnitAssertionTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-16T08:55:29" hostname="DESKTOP-1OOISRL" time="0.041">
   <properties/>
-  <testcase name="givenFirstName_WhenProper_ShouldReturnTrue()" classname="JUnitAssertionTest" time="0.038"/>
-  <testcase name="givenLastName_WhenProper_ShouldReturnTrue()" classname="JUnitAssertionTest" time="0.002"/>
+  <testcase name="givenFirstName_WhenProper_ShouldReturnTrue()" classname="JUnitAssertionTest" time="0.032"/>
+  <testcase name="givenEmailId_WhenProper_ShouldReturnTrue()" classname="JUnitAssertionTest" time="0.002"/>
+  <testcase name="givenLastName_WhenProper_ShouldReturnTrue()" classname="JUnitAssertionTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -18,4 +18,12 @@ public class JUnitAssertionTest {
         Assertions Assert = null;
         Assert.assertTrue(result);
     }
+
+    @Test
+    void givenEmailId_WhenProper_ShouldReturnTrue() {
+        RegexJava object = new RegexJava();
+        boolean result = object.emailId("abc.xyz@bl.co.in");
+        Assertions Assert = null;
+        Assert.assertTrue(result);
+    }
 }
