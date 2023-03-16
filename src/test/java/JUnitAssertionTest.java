@@ -8,7 +8,6 @@ public class JUnitAssertionTest {
         RegexJava object = new RegexJava();
         boolean result = object.firstName("Shrey");
         Assertions Assert = null;
-        Assert.assertEquals(true, result);
+        Assert.assertTrue(result);
     }
-
 }
