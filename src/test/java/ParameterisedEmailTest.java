@@ -1,4 +1,5 @@
 import org.example.RegexJava;
+import org.example.UserRegistrationException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,7 +31,7 @@ public class ParameterisedEmailTest {
     }
 
     @Test
-    public void givenEmail_WhenTested_ShouldPassAsExpected() {
+    public void givenEmail_WhenTested_ShouldPassAsExpected() throws UserRegistrationException {
         RegexJava object = new RegexJava();
         boolean result = object.emailId(this.emailToTest);
         Assert.assertEquals(this.expectedResult, result);
