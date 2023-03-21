@@ -4,25 +4,25 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class JUnitAssertionTest {
+
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
         RegexJava object = new RegexJava();
         try {
-            boolean result = object.firstName("Shrey");
-            Assert.assertTrue(result);
+            object.forFirstName.matchValue("Shrey");
         } catch (UserRegistrationException e) {
-            Assert.assertEquals("Please enter correct name", e.getMessage());
+            Assert.assertEquals("Please Enter Correct Name", e.getMessage());
         }
     }
+
 
     @Test
     public void givenFirstName_WhenPassedNull_ShouldPass() {
         RegexJava object = new RegexJava();
         try {
-            boolean result = object.firstName(null);
-            Assert.assertTrue(result);
+            object.forFirstName.matchValue(null);
         } catch (UserRegistrationException e) {
-            Assert.assertEquals("Please enter correct name", e.getMessage());
+            Assert.assertEquals("Please Enter Correct Name", e.getMessage());
         }
     }
 
@@ -30,18 +30,19 @@ public class JUnitAssertionTest {
     public void givenFirstName_WhenNotProper_ShouldPass() {
         RegexJava object = new RegexJava();
         try {
-            boolean result = object.firstName("sh");
+            object.forFirstName.matchValue("Sh");
         } catch (UserRegistrationException e) {
-            Assert.assertEquals("Please enter correct name", e.getMessage());
+            Assert.assertEquals("Please Enter Correct Name", e.getMessage());
         }
     }
 
+
     @Test
+
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.lastName("Bhatt");
-            Assert.assertTrue(result);
+            object.forLastName.matchValue("Bhatt");
         } catch (UserRegistrationException e) {
             Assert.assertEquals("Please Enter Correct Lastname", e.getMessage());
         }
@@ -51,8 +52,7 @@ public class JUnitAssertionTest {
     public void givenLastName_WhenPassedNull_ShouldPass() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.lastName(null);
-            Assert.assertTrue(result);
+            boolean result = object.forLastName.matchValue(null);
         } catch (UserRegistrationException e) {
             Assert.assertEquals("Please Enter Correct Lastname", e.getMessage());
         }
@@ -62,7 +62,7 @@ public class JUnitAssertionTest {
     public void givenLastName_WhenNotProper_ShouldPass() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.lastName("Bt");
+            object.forLastName.matchValue("Bt");
         } catch (UserRegistrationException e) {
             Assert.assertEquals("Please Enter Correct Lastname", e.getMessage());
         }
@@ -72,7 +72,7 @@ public class JUnitAssertionTest {
     public void givenEmailId_WhenProper_ShouldReturnTrue() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.emailId("abc.xyz@bl.co.in");
+            boolean result = object.foremailId.matchValue("abc.xyz@bl.co.in");
             Assert.assertTrue(result);
         } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter proper Email Id", e.getMessage());
@@ -83,7 +83,7 @@ public class JUnitAssertionTest {
     public void givenEmailId_WhenPassedNull_ShouldPass() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.emailId(null);
+            boolean result = object.foremailId.matchValue(null);
             Assert.assertTrue(result);
         } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter proper Email Id", e.getMessage());
@@ -94,7 +94,7 @@ public class JUnitAssertionTest {
     public void givenEmailId_WhenNotProper_ShouldPass() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.emailId("abc.@hi.c");
+            object.foremailId.matchValue("abc.a.a.@hi.c");
         } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter proper Email Id", e.getMessage());
         }
@@ -104,9 +104,9 @@ public class JUnitAssertionTest {
     public void givenMobileNum_WhenProper_ShouldReturnTrue() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.mobileNumber("91 9557885533");
+            boolean result = object.formobileNumber.matchValue("91 9557885533");
             Assert.assertTrue(result);
-        }catch (UserRegistrationException e){
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter proper Mobile Numb", e.getMessage());
         }
     }
@@ -115,9 +115,9 @@ public class JUnitAssertionTest {
     public void givenMobileNum_WhenPassedNull_ShouldPass() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.mobileNumber(null);
+            boolean result = object.formobileNumber.matchValue(null);
             Assert.assertTrue(result);
-        }catch (UserRegistrationException e){
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter proper Mobile Numb", e.getMessage());
         }
     }
@@ -126,8 +126,8 @@ public class JUnitAssertionTest {
     public void givenMobileNum_WhenNotProper_ShouldPass() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.mobileNumber("9 933");
-        }catch (UserRegistrationException e){
+            object.formobileNumber.matchValue("9 933");
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter proper Mobile Numb", e.getMessage());
         }
     }
@@ -136,9 +136,9 @@ public class JUnitAssertionTest {
     public void givenPassword_WhenMinEightChar_ShouldReturnTrue() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.password("shreybhatt");
+            boolean result = object.forpassword.matchValue("shreybhatt");
             Assert.assertTrue(result);
-        }catch (UserRegistrationException e){
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter Minimum 8 Character", e.getMessage());
         }
     }
@@ -147,7 +147,7 @@ public class JUnitAssertionTest {
     public void givenPassword_WhenNotEightChar_ShouldPass() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.password(null);
+            boolean result = object.forpassword.matchValue(null);
             Assert.assertTrue(result);
         } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter Minimum 8 Character", e.getMessage());
@@ -158,9 +158,9 @@ public class JUnitAssertionTest {
     public void givenPassword_WhenMinOneUpperCase_ShouldReturnTrue() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.upperCasePassword("shreYBhatt");
+            boolean result = object.forUpperCase.matchValue("shreYBhatt");
             Assert.assertTrue(result);
-        }catch (UserRegistrationException e){
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter Minimum 1 UpperCase", e.getMessage());
         }
     }
@@ -169,8 +169,8 @@ public class JUnitAssertionTest {
     public void givenPassword_WhenNotMinUpperCase_ShouldPass() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.upperCasePassword("Sgker");
-        }catch (UserRegistrationException e){
+            object.forUpperCase.matchValue("Sgker");
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter Minimum 1 UpperCase", e.getMessage());
         }
     }
@@ -179,20 +179,20 @@ public class JUnitAssertionTest {
     public void givenPassword_WhenMinOneUpperCaseAndNumeric_ShouldReturnTrue() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.numericPassword("shReybhAtt22");
+            boolean result = object.forNumericPassword.matchValue("shReybhAtt22");
             Assert.assertTrue(result);
-        }catch (UserRegistrationException e){
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter Minimum 1 UpperCase and Minimum 1 Numeric", e.getMessage());
         }
     }
 
     @Test
     public void givenPassword_WhenNotMinOneUpperCaseAndNumeric_ShouldPass() {
-        try{
-        RegexJava object = new RegexJava();
-        boolean result = object.numericPassword("shReybhAtt22");
-        Assert.assertTrue(result);
-        }catch (UserRegistrationException e){
+        try {
+            RegexJava object = new RegexJava();
+            boolean result = object.forNumericPassword.matchValue("shReybhAtt22");
+            Assert.assertTrue(result);
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter Minimum 1 UpperCase and Minimum 1 Numeric", e.getMessage());
         }
     }
@@ -201,9 +201,9 @@ public class JUnitAssertionTest {
     public void givenPassword_WhenExactOneCharacter_ShouldReturnTrue() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.characterPassword("shReybhAtt@22");
+            boolean result = object.forCharacterPassword.matchValue("shReybhAtt@22");
             Assert.assertTrue(result);
-        }catch (UserRegistrationException e){
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter exactly 1 character", e.getMessage());
         }
     }
@@ -212,9 +212,9 @@ public class JUnitAssertionTest {
     public void givenPassword_WhenNotProper_ShouldPass() {
         try {
             RegexJava object = new RegexJava();
-            boolean result = object.characterPassword("shReybhAtt@22");
+            boolean result = object.forCharacterPassword.matchValue("shReybhAtt@22");
             Assert.assertTrue(result);
-        }catch (UserRegistrationException e){
+        } catch (UserRegistrationException e) {
             Assert.assertEquals("Please enter exactly 1 character", e.getMessage());
         }
     }
@@ -227,7 +227,7 @@ public class JUnitAssertionTest {
 
         RegexJava object = new RegexJava();
         for (int i = 0; i < validEmails.length; i++) {
-            boolean result = object.emailId(validEmails[i]);
+            boolean result = object.foremailId.matchValue(validEmails[i]);
             Assert.assertTrue(result);
         }
     }
@@ -240,7 +240,7 @@ public class JUnitAssertionTest {
 
         RegexJava object = new RegexJava();
         for (int i = 0; i < inValidEmails.length; i++) {
-            boolean result = object.emailId(inValidEmails[i]);
+            boolean result = object.foremailId.matchValue(inValidEmails[i]);
             Assert.assertFalse(result);
         }
     }

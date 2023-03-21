@@ -33,7 +33,7 @@ public class ParameterisedEmailTest {
     @Test
     public void givenEmail_WhenTested_ShouldPassAsExpected() throws UserRegistrationException {
         RegexJava object = new RegexJava();
-        boolean result = object.emailId(this.emailToTest);
+        boolean result = object.foremailId.matchValue(this.emailToTest);
         Assert.assertEquals(this.expectedResult, result);
     }
 }
